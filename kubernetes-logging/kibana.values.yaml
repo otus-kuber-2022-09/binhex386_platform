@@ -1,0 +1,15 @@
+image: elastic/kibana
+
+tolerations:
+- key: node-role
+  operator: Equal
+  value: infra
+  effect: NoSchedule
+nodeSelector:
+  yandex.cloud/node-group-id: catr3qvo662pnad0j4vn
+
+ingress:
+  enabled: true
+  path: /
+  hosts:
+  - kibana.51.250.85.229.nip.io
